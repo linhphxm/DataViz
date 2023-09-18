@@ -1,0 +1,32 @@
+location,indicator group,indicator,age,sex,measure,Unit,Date,Value
+Australia,Total,Total Recorded Crime,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,1632
+Australia,Homicide and related offences,Homicide and related offences total,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,2.8
+Australia,Homicide and related offences,Murder,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,1.2
+Australia,Homicide and related offences,Attempted Murder,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,0.6
+Australia,Homicide and related offences,Manslaughter and driving causing death,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,1
+Australia,Acts intended to cause injury ,Acts intended to cause injury total,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,370.7
+Australia,Acts intended to cause injury ,Assault,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,334.1
+Australia,Acts intended to cause injury ,Other acts intended to cause injury,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,36.6
+Australia,Sexual assault and related offences,Sexual assault and related offences total,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,39.7
+Australia,Sexual assault and related offences,Sexual assault,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,27.1
+Australia,Sexual assault and related offences,Non–assaultive sexual offences,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,12.7
+Australia,Theft,Theft total,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,130.6
+Australia,Theft,Motor vehicle theft,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,21.1
+Australia,Theft,Theft (except motor vehicles),All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,93.3
+Australia,Theft,Receive or handle proceeds of crime,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,15.3
+Australia,Fraud/deception ,Fraud/deception total,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,37.2
+Australia,Fraud/deception ,Obtain benefit by deception,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,30
+Australia,Fraud/deception ,Forgery and counterfeiting,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,1.7
+Australia,Fraud/deception ,Deceptive business/government practices,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,0.4
+Australia,Fraud/deception ,Other fraud and deception offences,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,4.7
+Australia,Illicit drug offences,Illicit drug offences total,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,224.9
+Australia,Illicit drug offences,Deal or traffic in illicit drugs,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,31.8
+Australia,Illicit drug offences,Manufacture or cultivate illicit drugs,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,19
+Australia,Illicit drug offences,Possess and/or use illicit drugs,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,149.3
+Australia,Public order offences,Public order offences total,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,150.6
+Australia,Public order offences,Disorderly conduct,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,84.1
+Australia,Public order offences,Regulated public order offences,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,38.3
+Australia,Public order offences,Offensive conduct,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,28.2
+Australia,Offences against justice,Offences against justice total,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,126.8
+Australia,Offences against justice,Breach of violence and non-violence orders,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,81
+Australia,Offences against justice,Offences against justice procedures,All Age,Total,Offender Rate,"Number of offenders per 100,000",2022,32.3
