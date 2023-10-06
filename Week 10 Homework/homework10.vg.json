@@ -1,0 +1,88 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/linhphxm/3179/main/crimetime1.csv"
+    },
+    "layer": [
+      {
+        "mark": { "type": "line", "strokeWidth": 3 },
+        "selection": {
+          "highlight": {
+            "type": "multi",
+            "fields": ["indicator"],
+            "bind": "legend"
+          }
+        },
+        "encoding": {
+          "x": {
+            "field": "Date",
+            "type": "ordinal",
+            "title": null
+          },
+          "y": {
+            "field": "Value",
+            "type": "quantitative",
+            "title": "Average # of Offences per 100,000"
+          },
+          "color": {
+            "field": "indicator",
+            "type": "nominal",
+            "title": "Types of Crime"
+          },
+          "opacity": {
+            "condition": {
+              "selection": "highlight",
+              "value": 0.6
+            },
+            "value": 0.2
+          },
+          "tooltip": [
+            {
+                "field": "indicator",
+                "type": "nominal",
+                "title": "Crime Type"
+            },
+            {
+                "field": "Value",
+                "type": "quantitative",
+                "title": "Average Amount"
+            },
+            {
+                "field": "Date",
+                "type": "ordinal",
+                "title": "Year"
+            }
+        ]
+    }
+},
+{
+        "transform": [
+          {"sort": [{"field": "Value", "order": "descending"}],
+            "window": [{"op": "row_number", "as": "rowNumber"}],
+            "frame": [null, null]},
+          {"filter": "datum.rowNumber == 1"},
+
+          {
+            "calculate": "datum['indicator'] + ' had the most; amount of crime: ' + datum['Value']",
+            "as": "text_annotation_raw2"
+          },
+          {
+            "calculate": "split(datum.text_annotation_raw2, ';')",
+            "as": "text_annotation2"
+          }
+
+        ],
+        "mark": "text",
+        "encoding": {
+          "x": {"field": "Date", "type": "ordinal", "aggregate": "max", "title": null},
+          "y": {"field": "Value", "type": "quantitative", "aggregate": "max"},
+          "text": {"field": "text_annotation2", "type": "nominal"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {"selection": "highlight", "value": 1},
+            "value": 0
+          }
+        }
+      }
+    ]
+  }
