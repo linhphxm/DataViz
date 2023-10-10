@@ -1,7 +1,7 @@
 [
     {"id": "Total", "parent": null, "value": 1632},
 
-    {"id": "Homicide", "parent": "Australia", "value": 2.8},
+    {"id": "Homicide", "parent": "Total", "value": 2.8},
     {"id": "Murder", "parent": "Homicide", "value": 1.2},
     {"id": "Attempted Murder", "parent": "Homicide", "value": 0.6},
     {"id": "Manslaughter and driving causing death", "parent": "Homicide", "value": 1.0},
