@@ -1,0 +1,84 @@
+/* Setting Roboto font for body and some pure grid classes */
+body,
+.pure-g [class *= "pure-u"],
+.pure-g-r [class *= "pure-u"] {
+    font-family: 'Raleway', sans-serif; 
+    line-height: 1.6;
+}
+
+h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60px;
+}
+
+h2{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+}
+
+/* Styling for visualization containers, making them 100% wide */
+.vis-container {
+    width: 100%;
+    margin: auto;
+}
+
+/* Background color for the main body */
+.main {
+    background-color: #afc9e9;
+}
+
+/* Styling for the main title */
+.main-title {
+    background-color: #FFFDDE;
+    padding: 10px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+/* Width of the page, you can adjust as needed */
+.page {
+    width: 1300px;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
+}
+
+/* Styling for descriptions */
+.description-right,
+.description-left,
+.description-centre {
+    margin: 20px;
+    font-size: medium;
+}
+
+.description-tips {
+    margin: 20px;
+    font-size: medium;
+    font-style: italic;
+    color: grey;
+}
+
+/* Styling for titles within cards */
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: larger;
+}
+
+/* Spacing between cards */
+.divider {
+    height: 50px;
+}
+
+/* Styling for cards (box-like containers) */
+.vis-card {
+    /*box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%); */
+    border-radius: 2ch;
+}
+
+/* Background color and padding for cards */
+.p1 {
+    background-color: white;
+    padding: 20px;
+}
+
