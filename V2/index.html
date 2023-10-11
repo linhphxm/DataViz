@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=210, initial-scale=1.0">
+
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+     <!-- Import Pure CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" crossorigin="anonymous">
+    
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body class="main">
+    <div class="page">
+
+        <!-- Box for Text -->
+        <div class="p1 vis-card">
+            <!-- Title of the Box -->
+            <div class="pure-g title">
+                <div class="pure-u-1-1">
+                    <h1>Australian Crime</h1>
+                </div>
+            </div>
+            
+            <!-- Content and Description -->
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <div class="description-centre">
+                        <p>Embark on an explorative journey through the multifaceted landscape of Australian crime with our intuitive visualisation presentation. 
+                            This compelling visual narrative unfolds the intricate patterns and prevalent trends of crime across the diverse territories and 
+                            states of Australia, offering users a comprehensive and enlightening view into the dark underbelly of the continent.</p>
+                    </div>
+                </div>
+                <!-- Additional Text Content if needed -->
+                <div class="pure-u-1-2">
+                    <div class="description-centre">
+                        <p>The presentation meticulously integrates various dimensions of crime data, from petty thefts to heinous acts of violence, 
+                            portraying a vivid panorama of the criminal activity disseminating through the urban and rural expanses of Australia. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Box for Vega-Lite Graph -->
+        <div class="p1 vis-card">
+            <!-- Title of the Graph -->
+            <div class="pure-g title">
+                <div class="pure-u-1-1">
+                    <h2>Crime by State</h2>
+                </div>
+            </div>
+
+            <div class="pure-g">
+                <!-- First Graph -->
+                <div class="pure-u-1-2">
+                    <div id="ausmap" class="vis-container"></div>
+                    <!-- Description for First Graph -->
+                    <p class="description-centre">The presentation meticulously integrates various dimensions of crime data, from petty thefts to heinous acts of violence, 
+                        portraying a vivid panorama of the criminal activity disseminating through the urban and rural expanses of Australia.</p>
+                </div>
+                <!-- Second Graph -->
+                <div class="pure-u-1-2">
+                    <div id="boxplot" class="vis-container"></div>
+                    <!-- Description for Second Graph -->
+                    <p class="description-centre">The presentation meticulously integrates various dimensions of crime data, from petty thefts to heinous acts of violence, 
+                        portraying a vivid panorama of the criminal activity disseminating through the urban and rural expanses of Australia.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Additional Boxes and Content can be Added Below as Needed -->
+        <!-- ... -->
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Box for Vega-Lite Graph -->
+        <div class="p1 vis-card">
+            <!-- Title of the Graph -->
+            <div class="pure-g title">
+                <div class="pure-u-1-1">
+                    <h2>Crime by Type</h2>
+                </div>
+            </div>
+
+            <div class="pure-g">
+                <!-- First Graph -->
+                <div class="pure-u-1-2">
+                    <div id="dendro" class="vis-container"></div>
+                    <!-- Description for First Graph -->
+                    <p class="description-centre"></p>
+                </div>
+                <!-- Second Graph -->
+                <div class="pure-u-1-2">
+                    <div id="linegraph" class="vis-container"></div>
+                    <!-- Description for Second Graph -->
+                    <p class="description-centre">The presentation meticulously integrates various dimensions of crime data, from petty thefts to heinous acts of violence, 
+                        portraying a vivid panorama of the criminal activity disseminating through the urban and rural expanses of Australia. The presentation meticulously integrates various dimensions of crime data, from petty thefts to heinous acts of violence, 
+                        portraying a vivid panorama of the criminal activity disseminating through the urban and rural expanses of Australia.</p><p class="description-centre"> The presentation meticulously integrates various dimensions of crime data, from petty thefts to heinous acts of violence, 
+                        portraying a vivid panorama of the criminal activity disseminating through the urban and rural expanses of Australia</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Box for Vega-Lite Graph -->
+        <div class="p1 vis-card">
+            <!-- Title of the Graph -->
+            <div class="pure-g title">
+                <div class="pure-u-1-1">
+                    <h2>Crime by Demographics</h2>
+                </div>
+            </div>
+
+            <div class="pure-g">
+                <!-- First Graph -->
+                <div class="pure-u-1-2">
+                    <div id="butterflychart" class="vis-container" style="margin-bottom: 40px;"></div>
+                    <!-- Description for First Graph -->
+                    <p class="description-centre"></p>
+                    <div id="scatter" class="vis-container" style="margin-left: 40px;"></div>
+                </div>
+                <!-- Second Graph -->
+                <div class="pure-u-1-2">
+                    <div id="histogram" class="vis-container"></div>
+                    <!-- Description for Second Graph -->
+                    <p class="description-centre">The presentation meticulously integrates various dimensions of crime data, from petty thefts to heinous acts of violence, 
+                        portraying a vivid panorama of the criminal activity disseminating through the urban and rural expanses of Australia.</p><p class="description-centre">The presentation meticulously integrates various dimensions of crime data, from petty thefts to heinous acts of violence, 
+                        portraying a vivid panorama of the criminal activity disseminating through the urban and rural expanses of Australia. The presentation meticulously integrates various dimensions of crime data, from petty thefts to heinous acts of violence, 
+                        portraying a vivid panorama of the criminal activity disseminating through the urban and rural expanses of Australia.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+</body>
+
+<script type="text/javascript">
+    
+    var spec1 = "js/ausmap.vg.json";
+    vegaEmbed('#ausmap', spec1).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var spec2 = "js/boxplot.vg.json";
+    vegaEmbed('#boxplot', spec2).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var spec3 = "js/histogram.vg.json";
+    vegaEmbed('#histogram', spec3).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var spec4 = "js/linegraph.vg.json";
+    vegaEmbed('#linegraph', spec4).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var spec5 = "js/butterflychart.vg.json";
+    vegaEmbed('#butterflychart', spec5).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var spec6 = "js/scatter.vg.json";
+    vegaEmbed('#scatter', spec6).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error); 
+
+    var spec7 = "js/dendro.vg.json";
+    vegaEmbed('#dendro', spec7).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error); 
+
+
+  </script>
+
+</html>
+
