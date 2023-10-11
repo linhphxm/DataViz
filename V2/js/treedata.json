@@ -1,0 +1,77 @@
+{
+    "name": "Australia",
+    "value": 1632,
+    "children": [
+      {
+        "name": "Homicide and related offences",
+        "value": 2.8,
+        "children": [
+          {"name": "Murder", "value": 1.2},
+          {"name": "Attempted Murder", "value": 0.6},
+          {"name": "Manslaughter and driving causing death", "value": 1.0}
+        ]
+      },
+      {
+        "name": "Acts intended to cause injury",
+        "value": 370.7,
+        "children": [
+          {"name": "Assault", "value": 334.1},
+          {"name": "Other acts intended to cause injury", "value": 36.6}
+        ]
+      },
+      {
+        "name": "Sexual assault and related offences",
+        "value": 39.7,
+        "children": [
+          {"name": "Sexual assault", "value": 27.1},
+          {"name": "Non assaultive sexual offences", "value": 12.7}
+        ]
+      },
+      {
+        "name": "Theft",
+        "value": 130.6,
+        "children": [
+          {"name": "Motor vehicle theft", "value": 21.2},
+          {"name": "Theft (except motor vehicles)", "value": 93.3},
+          {"name": "Receive or handle proceeds of crime", "value": 15.3}
+        ]
+      },
+      {
+        "name": "Fraud/deception",
+        "value": 37.2,
+        "children": [
+          {"name": "Obtain benefit by deception", "value": 30},
+          {"name": "Forgery and counterfeiting", "value": 1.7},
+          {"name": "Deceptive business/government practices", "value": 0.4}
+        ]
+      },
+      {
+        "name": "Illicit drug offences",
+        "value": 224.9,
+        "children": [
+          {"name": "Deal or traffic in illicit drugs", "value": 31.8},
+          {"name": "Manufacture or cultivate illicit drugs", "value": 19},
+          {"name": "Possess and/or use illicit drugs", "value": 149.3}
+        ]
+      },
+      {
+        "name": "Public order offences",
+        "value": 150.6,
+        "children": [
+          {"name": "Disorderly conduct", "value": 84.1},
+          {"name": "Regulated public order offences", "value": 38.3},
+          {"name": "Offensive conduct", "value": 28.2}
+        ]
+      },
+      {
+        "name": "Offences against justice",
+        "value": 126.8,
+        "children": [
+          {"name": "Breach of violence and non-violence orders", "value": 81},
+          {"name": "Offences against justice procedures", "value": 32.3}
+        ]
+      }
+      
+    ]
+  }
+  

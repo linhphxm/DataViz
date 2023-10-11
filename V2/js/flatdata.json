@@ -1,0 +1,43 @@
+[
+    {"id": "Total", "parent": null, "value": 1632},
+
+    {"id": "Homicide", "parent": "Total", "value": 2.8},
+    {"id": "Murder", "parent": "Homicide", "value": 1.2},
+    {"id": "Attempted Murder", "parent": "Homicide", "value": 0.6},
+    {"id": "Manslaughter and driving causing death", "parent": "Homicide", "value": 1.0},
+
+    {"id": "Acts intended to cause injury", "parent": "Total", "value": 370.7},
+    {"id": "Assault", "parent": "Acts intended to cause injury", "value": 334.1},
+    {"id": "Other acts intended to cause injury", "parent": "Acts intended to cause injury", "value": 36.6},
+
+    {"id": "Sexual assault and related offences", "parent": "Total", "value": 39.7},
+    {"id": "Sexual assault", "parent": "Sexual assault and related offences", "value": 27.1},
+    {"id": "Non assaultive sexual offences", "parent": "Sexual assault and related offences", "value": 12.7},
+
+    {"id": "Theft", "parent": "Total", "value": 130.6},
+    {"id": "Motor vehicle theft", "parent": "Theft", "value": 21.2},
+    {"id": "Theft (except motor vehicles)", "parent": "Theft", "value": 93.3},
+    {"id": "Receive or handle proceeds of crime", "parent": "Theft", "value": 15.3},
+
+    {"id": "Fraud/deception", "parent": "Total", "value": 37.2},
+    {"id": "Obtain benefit by deception", "parent": "Fraud/deception", "value": 30.0},
+    {"id": "Forgery and counterfeiting", "parent": "Fraud/deception", "value": 1.7},
+    {"id": "Deceptive business/government practices", "parent": "Fraud/deception", "value": 0.4},
+
+    {"id": "Illicit drug offences", "parent": "Total", "value": 224.9},
+    {"id": "Deal or traffic in illicit drugs", "parent": "Illicit drug offences", "value": 31.8},
+    {"id": "Manufacture or cultivate illicit drugs", "parent": "Illicit drug offences", "value": 19},
+    {"id": "Possess and/or use illicit drugs", "parent": "Illicit drug offences", "value": 149.3},
+
+    {"id": "Public order offences", "parent": "Total", "value": 150.6},
+    {"id": "Disorderly conduct", "parent": "Public order offences", "value": 84.1},
+    {"id": "Regulated public order offences", "parent": "Public order offences", "value": 38.3},
+    {"id": "Offensive conduct", "parent": "Public order offences", "value": 28.2},
+
+    {"id": "Offences against justice", "parent": "Total", "value": 126.8},
+    {"id": "Breach of violence and non-violence orders", "parent": "Offences against justice", "value": 81.0},
+    {"id": "Offences against justice procedures", "parent": "Offences against justice", "value": 32.3}
+
+    
+  ]
+  

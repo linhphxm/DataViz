@@ -1,0 +1,18 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/linhphxm/3179/main/crimesafety2.csv"},
+    "width": 350,
+    "height": 250,
+    "mark": "circle",
+    "encoding": {
+      "x": {"field": "Crime Index", "type": "quantitative"},
+      "y": {"field": "Safety Index", "type": "quantitative"},
+      "color": {"field": "State", "type": "nominal", "scale": {"range": ["#EB8887", "#FFA835", "#EBD454", "#A1DB9D", "#7AB5FF", "#B89FF5", "#FF99FC", "#C2824A"]}},
+      "tooltip": [
+        {"field": "State", "type": "nominal"},
+        {"field": "City", "type": "nominal"},
+        {"field": "Crime Index", "type": "quantitative"},
+        {"field": "Safety Index", "type": "quantitative"}
+    ]
+    }
+}

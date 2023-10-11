@@ -1,0 +1,78 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Australia Crime Ages" },
+    "width": 400,
+    "height": 300,
+    "data": {
+        "url": "https://raw.githubusercontent.com/linhphxm/3179/main/V2/data/crimeage.csv"
+    },
+    "params": [{
+      
+        "name": "Date_Above",
+        "value": 2009,
+        "bind": {
+        "input": "range",
+        "min": 2009,
+        "max": 2022,
+        "step": 1,
+        "name": "Year Selection: "}
+    }],
+    "layer": [{
+    "transform": [{"filter": "datum.Date == Date_Above"}],
+    "mark": "bar",
+    "encoding": {
+        "x": { 
+              "field": "age", 
+              "type": "ordinal", 
+              "title":"Age Group",
+              "axis": {"labelAngle": -45}
+            },
+        "y": { 
+              "field": "Value", 
+              "type": "quantitative", 
+              "title": "Number of Offences",
+              "scale": {
+                "domain": [0, 6750]}
+              },
+        "color": {
+          "value": "#6EA4E6"
+        },
+        "tooltip": [
+            {"field": "age", "type": "ordinal", "title": "Age Range"},
+            {"field": "Value", "type": "quantitative", "title": "Frequency per 100,000"}
+            ]
+        }
+    },
+    {
+        "transform": [
+        {"filter": "datum.Date == Date_Above"},
+          {"sort": [{"field": "Value", "order": "descending"}],
+            "window": [{"op": "row_number", "as": "rowNumber"}],
+            "frame": [null, null]},
+          {"filter": "datum.rowNumber == 1"},
+
+          {
+            "calculate": "'The age group '+ datum['age'] + ' had the; most amount of crime: ' + datum['Value']",
+            "as": "text_annotation_raw2"
+          },
+          {
+            "calculate": "split(datum.text_annotation_raw2, ';')",
+            "as": "text_annotation2"
+          }
+
+        ],
+        "mark": {
+            "type": "text",
+            "dx": 50,
+            "dy": -20
+        },
+        "encoding": {
+          "x": {"field": "age", "type": "ordinal", "aggregate": "max", "title": null},
+          "y": {"field": "Value", "type": "quantitative", "aggregate": "max"},
+          "text": {"field": "text_annotation2", "type": "nominal"},
+          "color": {"value": "black"}
+        }
+      }
+
+  ]
+}

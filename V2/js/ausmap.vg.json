@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/linhphxm/3179/main/crimemap1.csv"
+  },
+  "vconcat": [
+    {
+      "width": 400,
+      "height": 400,
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/linhphxm/3179/main/crimemap1.csv"
+          },
+          "transform": [
+            {
+              "lookup": "location",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/linhphxm/3179/main/mapstates.json",
+                  "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
+                },
+                "key": "properties.name",
+                "fields": ["properties", "type", "geometry"]
+              }
+            },
+            {
+              "filter": {"param": "time_brush"}
+            }
+          ],
+          "mark": {"type": "geoshape", "stroke": "white"},
+          "encoding": {
+            "color": {
+              "field": "Value",
+              "type": "quantitative",
+              "scale": {
+                "domain": [500, 6000]
+              }
+            },
+            "tooltip": [
+              {"field": "properties.name", "type": "nominal", "title": "State"},
+              {"field": "Value", "type": "quantitative", "title": "Offenders"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "width": 400,
+      "height": 100,
+      "transform": [
+        {
+          "calculate": "datum.location === 'New South Wales' ? 'NSW' : (datum.location === 'Victoria' ? 'VIC' : (datum.location === 'Queensland' ? 'QLD' : (datum.location === 'Western Australia' ? 'WA' : (datum.location === 'South Australia' ? 'SA' : (datum.location === 'Tasmania' ? 'TAS' : (datum.location === 'Northern Territory' ? 'NT' : (datum.location === 'Australian Capital Territory' ? 'ACT' : 'Other')))))))",
+          "as": "short_loc"
+        }
+      ],
+      "mark": "line",
+      "encoding": {
+        "x": {"field": "Date", "type": "temporal"},
+        "y": {"aggregate": "mean", "field": "Value", "type": "quantitative"},
+        "color": {"field": "short_loc", "type": "nominal", "legend": {"title": "State"}, "scale": {"range": ["#EB8887", "#FFA835", "#EBD454", "#A1DB9D", "#6EA4E6", "#B89FF5", "#FF99FC", "#C2824A"]}}
+      },
+      "params": [
+        {
+          "name": "time_brush",
+          "select": {"type": "interval", "encodings": ["x"], "fields": ["Date"]}
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Distribution of State Crime" },
+  "width": 400,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/linhphxm/3179/main/crimemap1.csv"
+  },
+  "mark": "boxplot",
+  "encoding": {
+    "x": {
+      "field": "location",
+      "type": "nominal",
+      "title": "State",
+      "sort": ["Northern Territory", "South Australia", "Tasmania", "Queensland", "Western Australia", "New South Wales", "Victoria", "Australian Capital Territory"],
+      "axis": {"labelAngle": -45} 
+      
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "scale": { "zero": false },
+      "title": "Number of Crime per 100,000"
+    },
+    "color": {
+      "field": "location",
+      "type": "nominal",
+      "legend": null,
+      "scale": {"range": ["#EB8887", "#FFA835", "#EBD454", "#A1DB9D", "#6EA4E6", "#B89FF5", "#FF99FC", "#C2824A"]}
+    },
+    "tooltip": [
+      { "field": "Value", "type": "quantitative" },
+      { "field": "location", "type": "nominal", "title": "State" }
+    ]
+  }
+}
+
+

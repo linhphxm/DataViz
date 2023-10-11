@@ -1,0 +1,93 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Crime Based on Gender in Australia",
+    "data": { "url": "https://raw.githubusercontent.com/linhphxm/3179/main/V2/data/genderstatetime.csv" },
+    "spacing": 0,
+    "params": [{
+      "name": "Date_Above",
+      "value": 2009,
+      "bind": { "input": "range", "min": 2009, "max": 2022, "step": 1, "name": "Year Selection: " }
+    }],
+    "hconcat": [
+      {
+        "width": 200,
+        "height": 300,
+        "layer": [
+          {
+            "title": "Female",
+            "transform": [
+              {"filter": {"field": "sex", "equal": "Female"}},
+              {"filter": "datum.Date == Date_Above"}
+            ],
+            "mark": "bar",
+            "encoding": {
+              "y": {"field": "location", "axis": null, "sort": "ascending"},
+              "x": {"field": "Value", "type": "quantitative", "title": "# of offenders per 100,00", "axis": {"format": "s"}, "sort": "descending", "scale": {"domain": [0, 9000]}},
+              "color": {"field": "sex", "scale": {"range": ["#A1DB9D", "#6EA4E6"]}, "legend": null}
+            }
+          },
+          {
+            "transform": [
+              {"filter": {"field": "sex", "equal": "Female"}},
+              {"filter": "datum.Date == Date_Above"}
+            ],
+            "mark": {"type": "text", "dx": -15, "dy": 0},
+            "encoding": {
+              "y": {"field": "location", "type": "ordinal"},
+              "x": {"field": "Value", "type": "quantitative"},
+              "text": {"field": "Value", "type": "quantitative"}
+            }
+          }
+        ]
+      },
+      {
+        "width": 20,
+        "height": 300,
+        "view": {"stroke": null},
+        "transform": [{"filter": "datum.Date == 2019"}],
+        "mark": {
+          "type": "text",
+          "align": "center"
+        },
+        "encoding": {
+          "y": {"field": "location", "type": "nominal", "axis": null, "sort": "ascending"},
+          "text": {"field": "location", "type": "nominal"}
+        }
+      },
+      {
+        "width": 200,
+        "height": 300,
+        "layer": [
+          {
+            "title": "Male",
+            "transform": [
+              {"filter": {"field": "sex", "equal": "Male"}},
+              {"filter": "datum.Date == Date_Above"}
+            ],
+            "mark": "bar",
+            "encoding": {
+              "y": {"field": "location", "axis": null, "sort": "descending"},
+              "x": {"field": "Value", "type": "quantitative", "title": "# of offenders per 100,00", "axis": {"format": "s"}, "scale": {"domain": [0, 9000]}},
+              "color": {"field": "sex", "legend": null}
+            }
+          },
+          {
+            "transform": [
+              {"filter": {"field": "sex", "equal": "Male"}},
+              {"filter": "datum.Date == Date_Above"}
+            ],
+            "mark": {"type": "text", "dx": 15, "dy": 0},
+            "encoding": {
+              "y": {"field": "location", "type": "ordinal"},
+              "x": {"field": "Value", "type": "quantitative"},
+              "text": {"field": "Value", "type": "quantitative"}
+            }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "view": {"stroke": null},
+      "axis": {"grid": false}
+    }
+  }
