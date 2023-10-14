@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": { "text": "Distribution of State Crime" },
+  "title": { "text": "Distribution of State Crime"},
   "width": 400,
-  "height": 400,
+  "height": 450,
   "data": {
     "url": "https://raw.githubusercontent.com/linhphxm/3179/main/crimemap1.csv"
   },
@@ -11,27 +11,46 @@
     "x": {
       "field": "location",
       "type": "nominal",
-      "title": "State",
+      "title": null,
       "sort": ["Northern Territory", "South Australia", "Tasmania", "Queensland", "Western Australia", "New South Wales", "Victoria", "Australian Capital Territory"],
-      "axis": {"labelAngle": -45} 
+      "axis": {"labelAngle": -45, "labelFont": "Raleway"}
       
     },
     "y": {
       "field": "Value",
       "type": "quantitative",
       "scale": { "zero": false },
-      "title": "Number of Crime per 100,000"
+      "title": "Number of Crime per 100,000",
+      "axis": {"titleFont": "Raleway"}
     },
     "color": {
       "field": "location",
       "type": "nominal",
-      "legend": null,
+      "legend": {
+        "title": "State",
+        "titleFont": "Raleway",
+        "labelFont": "Raleway"
+    },
       "scale": {"range": ["#EB8887", "#FFA835", "#EBD454", "#A1DB9D", "#6EA4E6", "#B89FF5", "#FF99FC", "#C2824A"]}
     },
     "tooltip": [
       { "field": "Value", "type": "quantitative" },
       { "field": "location", "type": "nominal", "title": "State" }
     ]
+  },
+  "config": { 
+    "text": { "font": "Raleway" }, 
+    "axis": {
+      "labelFont": "Raleway", 
+      "titleFont": "Raleway" 
+    },
+    "legend": {
+      "labelFont": "Raleway", 
+      "titleFont": "Raleway" 
+    },
+    "title": {
+      "font": "Raleway" 
+    }
   }
 }
 

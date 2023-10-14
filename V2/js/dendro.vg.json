@@ -1,5 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "title": {"text": "Crime Groups and Types in Australia",
+              "font": "Raleway"},
     "width": 400,
     "height": 500,
     "padding": 5,
@@ -12,7 +14,7 @@
         "name": "layout", "value": "tidy"
       },
       {
-        "name": "Links", "value": "diagonal",
+        "name": "Links ", "value": "diagonal",
         "bind": {
           "input": "select",
           "options": ["line", "curve", "diagonal", "orthogonal"]
@@ -92,14 +94,14 @@
           ]
         },
         {
-          "name": "Links",
+          "name": "Links ",
           "source": "tree",
           "transform": [
             { "type": "treelinks" },
             {
               "type": "linkpath",
               "orient": "horizontal",
-              "shape": {"signal": "Links"}
+              "shape": {"signal": "Links "}
             }
           ]
         }
@@ -117,7 +119,7 @@
     "marks": [
       {
         "type": "path",
-        "from": {"data": "Links"},
+        "from": {"data": "Links "},
         "encode": {
           "update": {
             "path": {"field": "path"},
@@ -139,7 +141,7 @@
             "fill": {"scale": "color", "field": "parent"},
             "opacity": {"signal": "Type === 'All' || datum.id === Type || datum.parent === Type ? 1 : 0.2"},
             "tooltip": {
-                "signal": "{'Type': datum.id, 'Amount of offcences': datum.value}"
+                "signal": "{'Type ': datum.id, 'Amount of offcences': datum.value}"
             }
           }
         }
@@ -151,7 +153,8 @@
           "enter": {
             "text": {"field": "id"},
             "fontSize": {"value": 11},
-            "baseline": {"value": "middle"}
+            "baseline": {"value": "middle"},
+            "font": {"value": "Raleway"}
           },
           "update": {
             "x": {"field": "x"},
@@ -162,7 +165,23 @@
           }
         }
       }
-    ]
+    ],
+    "config": {
+      "title": {
+        "font": "Raleway" 
+      },
+      "axis": {
+        "labelFont": "Raleway", 
+        "titleFont": "Raleway"
+      }, 
+      "legend": {
+        "labelFont": "Raleway", 
+        "titleFont": "Raleway"  
+      },
+      "text": {
+        "font": "Raleway" 
+    }
   }
+}
 
 

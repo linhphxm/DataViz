@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": { "text": "Australia Crime Ages" },
-    "width": 400,
-    "height": 300,
+    "title": { "text": "Australia Crime Groups" },
+    "width": 500,
+    "height": 280,
     "data": {
         "url": "https://raw.githubusercontent.com/linhphxm/3179/main/V2/data/crimeage.csv"
     },
@@ -64,7 +64,8 @@
         "mark": {
             "type": "text",
             "dx": 50,
-            "dy": -20
+            "dy": -20,
+            "font": "Raleway"
         },
         "encoding": {
           "x": {"field": "age", "type": "ordinal", "aggregate": "max", "title": null},
@@ -74,5 +75,21 @@
         }
       }
 
-  ]
+  ],
+  "config": {
+    "axis": {
+      "labelFont": "Raleway", 
+      "titleFont": "Raleway" 
+    },
+    "text": {
+      "font": "Raleway" 
+    },
+    "title": {
+      "font": "Raleway" 
+    },
+    "legend": {
+      "labelFont": "Raleway", 
+      "titleFont": "Raleway" 
+    }
+  }
 }

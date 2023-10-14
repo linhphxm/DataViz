@@ -1,5 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Types of Crime Over Time"},
     "width": 400,
     "height": 200,
     "data": {
@@ -67,7 +68,7 @@
           {"filter": "datum.rowNumber == 1"},
 
           {
-            "calculate": "datum['indicator'] + ' had the most; amount of crime: ' + datum['Value']",
+            "calculate": "datum['indicator'] + ' had the most; amount of crime overall: ' + datum['Value']",
             "as": "text_annotation_raw2"
           },
           {
@@ -76,7 +77,7 @@
           }
 
         ],
-        "mark": "text",
+        "mark": {"type":"text", "dx": 90, "dy": 35, "font": "Raleway"},
         "encoding": {
           "x": {"field": "Date", "type": "ordinal", "aggregate": "max", "title": null},
           "y": {"field": "Value", "type": "quantitative", "aggregate": "max"},
@@ -88,5 +89,22 @@
           }
         }
       }
-    ]
+    ],
+    "config": {
+      "text": {
+        "font": "Raleway" 
+      },
+      "title": {
+        "font": "Raleway", 
+        "anchor": "middle" 
+      },
+      "axis": {
+        "labelFont": "Raleway", 
+        "titleFont": "Raleway"  
+      },
+      "legend": {
+        "labelFont": "Raleway", 
+        "titleFont": "Raleway"  
+      }
+    }
   }

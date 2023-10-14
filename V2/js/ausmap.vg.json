@@ -7,6 +7,7 @@
     {
       "width": 400,
       "height": 400,
+      "title": { "text": "Recorded State Crimes per 100,000", "align": "center" },
       "layer": [
         {
           "data": {
@@ -35,7 +36,10 @@
               "type": "quantitative",
               "scale": {
                 "domain": [500, 6000]
-              }
+              },
+              "legend": {"title": "Recorded Crimes",
+            "titleFont": "Raleway",
+            "labelFont": "Raleway"}
             },
             "tooltip": [
               {"field": "properties.name", "type": "nominal", "title": "State"},
@@ -56,9 +60,16 @@
       ],
       "mark": "line",
       "encoding": {
-        "x": {"field": "Date", "type": "temporal"},
-        "y": {"aggregate": "mean", "field": "Value", "type": "quantitative"},
-        "color": {"field": "short_loc", "type": "nominal", "legend": {"title": "State"}, "scale": {"range": ["#EB8887", "#FFA835", "#EBD454", "#A1DB9D", "#6EA4E6", "#B89FF5", "#FF99FC", "#C2824A"]}}
+        "x": {"field": "Date", "type": "temporal", "title": null},
+        "y": {"aggregate": "mean", "field": "Value", "type": "quantitative", "title": "# of Crimes"},
+        "color": {
+          "field": "short_loc", 
+          "type": "nominal", 
+          "legend": {"title": "State",
+            "titleFont": "Raleway",
+            "labelFont": "Raleway"
+        }, 
+          "scale": {"range": ["#EB8887", "#FFA835", "#EBD454", "#A1DB9D", "#6EA4E6", "#B89FF5", "#FF99FC", "#C2824A"]}}
       },
       "params": [
         {
@@ -67,6 +78,20 @@
         }
       ]
     }
-  ]
+  ],
+  "config": {
+    "text": {"font": "Raleway"}, 
+    "axis": {
+      "labelFont": "Raleway", 
+      "titleFont": "Raleway"  
+    },
+    "legend": {
+      "labelFont": "Raleway", 
+      "titleFont": "Raleway"  
+    },
+    "title": {
+      "font": "Raleway" 
+    }
+  }
 }
 

@@ -1,18 +1,124 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {"url": "https://raw.githubusercontent.com/linhphxm/3179/main/crimesafety2.csv"},
-    "width": 350,
+    "title": { "text": "Wealth" },
+    "data": { "url": "https://raw.githubusercontent.com/linhphxm/3179/main/V2/data/crimewealth.csv" },
+    "width": 400,
     "height": 250,
-    "mark": "circle",
-    "encoding": {
-      "x": {"field": "Crime Index", "type": "quantitative"},
-      "y": {"field": "Safety Index", "type": "quantitative"},
-      "color": {"field": "State", "type": "nominal", "scale": {"range": ["#EB8887", "#FFA835", "#EBD454", "#A1DB9D", "#7AB5FF", "#B89FF5", "#FF99FC", "#C2824A"]}},
-      "tooltip": [
-        {"field": "State", "type": "nominal"},
-        {"field": "City", "type": "nominal"},
-        {"field": "Crime Index", "type": "quantitative"},
-        {"field": "Safety Index", "type": "quantitative"}
-    ]
+    "layer": [
+
+      {
+        "transform": [
+            {
+              "calculate": "datum.State === 'New South Wales' ? 'NSW' : (datum.State === 'Victoria' ? 'VIC' : (datum.State === 'Queensland' ? 'QLD' : (datum.State === 'Western Australia' ? 'WA' : (datum.State === 'South Australia' ? 'SA' : (datum.State === 'Tasmania' ? 'TAS' : (datum.State === 'Northern Territory' ? 'NT' : (datum.State === 'Australian Capital Territory' ? 'ACT' : 'ACT')))))))",
+              "as": "short_loc"
+            }
+          ],
+        "mark": "circle",
+        "selection": {
+          "highlight": {
+            "type": "multi",
+            "fields": ["short_loc"],
+            "bind": "legend"
+          }
+        },
+        "encoding": {
+          "x": { "field": "Crime Index", "type": "quantitative" },
+          "y": { "field": "Wealth Index", "type": "quantitative" },
+          "color": { 
+            "field": "short_loc", 
+            "type": "nominal", 
+            "scale": { "range": ["#EB8887", "#FFA835", "#EBD454", "#A1DB9D", "#7AB5FF", "#B89FF5", "#FF99FC", "#C2824A"]},
+            "legend": {
+                "title": "State",
+                "titleFont": "Raleway",
+                "labelFont": "Raleway"
+            }},
+          "opacity": {
+            "condition": {
+              "selection": "highlight",
+              "value": 1
+            },
+            "value": 0.2
+          },
+          "tooltip": [
+            { "field": "State", "type": "nominal" },
+            { "field": "City", "type": "nominal" },
+            { "field": "Crime Index", "type": "quantitative" },
+            { "field": "Wealth Index", "type": "quantitative" }
+          ]
+        }
+      },
+
+      {
+        "transform": [
+          {"sort": [{"field": "Wealth Index", "order": "descending"}],
+            "window": [{ "op": "row_number", "as": "rowNumber"}],
+            "frame": [null, null]},
+          {"filter": "datum.rowNumber === 1"},
+
+          {
+            "calculate": "datum['State'] + ' had the highest; wealth index: ' + datum['Wealth Index']",
+            "as": "text_annotation_raw1"
+          },
+          {
+            "calculate": "split(datum.text_annotation_raw1, ';')",
+            "as": "text_annotation1"
+          }
+        ],
+        "mark": {"type": "text", "dy": -10, "dx": 80},
+        "encoding": {
+          "x": { "field": "Crime Index", "type": "quantitative" },
+          "y": { "field": "Wealth Index", "type": "quantitative" },
+          "text": { "field": "text_annotation1", "type": "nominal" },
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {"selection": "highlight", "value": 1},
+            "value": 0
+          }
+        }
+      },
+      {
+        "transform": [
+          {"sort": [{"field": "Wealth Index", "order": "ascending"}],
+            "window": [{ "op": "row_number", "as": "rowNumber"}],
+            "frame": [null, null]},
+          {"filter": "datum.rowNumber === 1"},
+
+          {
+            "calculate": "datum['State'] + ' had the lowest; wealth index: ' + datum['Wealth Index']",
+            "as": "text_annotation_raw2"
+          },
+          {
+            "calculate": "split(datum.text_annotation_raw2, ';')",
+            "as": "text_annotation2"
+          }
+        ],
+        "mark": {"type": "text", "dy": 20, "dx": -30},
+        "encoding": {
+          "x": { "field": "Crime Index", "type": "quantitative" },
+          "y": { "field": "Wealth Index", "type": "quantitative" },
+          "text": { "field": "text_annotation2", "type": "nominal" },
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {"selection": "highlight", "value": 1},
+            "value": 0
+          }
+        }
+      }
+    ],
+    "config": {
+      "title": {
+        "font": "Raleway"
+      },
+      "text": { "font": "Raleway" },
+      "axis": {
+        "labelFont": "Raleway",
+        "titleFont": "Raleway"
+      },
+      "legend": {
+        "labelFont": "Raleway",
+        "titleFont": "Raleway"
+      }
     }
-}
+  }
+  
