@@ -48,7 +48,7 @@ h2{
 .description-left,
 .description-centre {
     margin: 20px;
-    font-size: medium;
+    font-size: larger;
 }
 
 .description-tips {
@@ -82,3 +82,10 @@ h2{
     padding: 20px;
 }
 
+.vega-tooltip {
+    font-family: 'Raleway', sans-serif !important;
+}
+
+b {
+    font-family: 'Raleway', sans-serif;
+}
